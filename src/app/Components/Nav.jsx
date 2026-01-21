@@ -104,6 +104,41 @@ export default function Nav() {
                     </div>
                 </div>
 
+                {/* Mobile Menu Dropdown */}
+
+                <ul className={`lg:hidden flex flex-col items-start ps-6 gap-6 bg-[#f7f7f7] 
+                    shadow-md absolute left-0 w-full
+                    overflow-hidden transition-all duration-500 ease-in-out
+                    ${isOpen ? 'max-h-[500px] top-full mt-3 opacity-100 py-6' : 'max-h-0 opacity-0 py-0 top-full'   }
+                        `}>
+                            <li>
+                                <a href="#" className="font-[500] hover:text-black ">Home</a>
+                            </li>
+                            <li>
+                                <a href="#" className="font-[500] hover:text-black ">About</a>
+                            </li>
+
+                            <li>
+                                <a href="#" className="font-[500] hover:text-black ">Tour</a>
+                               
+                            </li>
+
+                            <li>
+                                 <a href="#" className="font-[500] hover:text-black ">Faq</a>
+                               
+                            </li>
+
+                            <li>
+                                 <a href="#" className="font-[500] hover:text-black ">Blog</a>
+                                
+                            </li>
+
+                            <li>
+                                <a href="#" className="font-[500] hover:text-black ">Contact</a>
+                            </li>
+                        </ul>
+
+
             </div>
     </nav>
   )
