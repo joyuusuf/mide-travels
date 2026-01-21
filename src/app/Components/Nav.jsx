@@ -2,7 +2,9 @@
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import{
     FaPhone, FaEnvelope, faUser, FaBars, FaTimes,
-    faPhone, 
+    faPhone,
+    faTimes,
+    faBars, 
 } from "@fortawesome/free-solid-svg-icons"
 
 import { faEnvelope } from "@fortawesome/free-solid-svg-icons";
@@ -79,7 +81,28 @@ export default function Nav() {
                 {/* Desktop Menu */}
                 <ul className="nav-menu hidden lg:flex w-full justify-center items-center gap-14 py-5 relative">
                     <li> <Link href="/" className="active font-[500] hover:text-black transition-colors duration-500">Home</Link> </li>
+                    <li> <Link href="/About" className="active font-[500] text-[#697e8a] hover:text-black transition-colors duration-500">About</Link> </li>
+                    <li> <Link href="/Tour" className="active font-[500] text-[#697e8a] hover:text-black transition-colors duration-500">Tour</Link> </li>
+                    <div className="logo text-3xl uppercase font-semibold">
+                        <Link href="/" className="unbounded-font">Mide <span className="unbounded-font">travels</span></Link> 
+                    </div>
+                    <li> <Link href="/Faq" className="active font-[500] text-[#697e8a] hover:text-black transition-colors duration-500">Faq</Link> </li>
+                    <li> <Link href="/Blog" className="active font-[500] text-[#697e8a] hover:text-black transition-colors duration-500">Blog</Link> </li>
+                    <li> <Link href="/Contact" className="active font-[500] text-[#697e8a] hover:text-black transition-colors duration-500">Contact</Link> </li>
+
                 </ul>
+
+                {/* Mobile Toggle */}
+                <div className="flex justify-center items-center">
+                    <div 
+                    className="toggle-btn lg:hidden curso-pointer"
+                    onClick={()=> setIsOpen(!isOpen)}>
+                        <FontAwesomeIcon  
+                        icon={isOpen ? faTimes : faBars}
+                        className="text[#193555] text-xl"
+                        />
+                    </div>
+                </div>
 
             </div>
     </nav>
