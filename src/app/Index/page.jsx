@@ -1,4 +1,5 @@
 "use client"
+import { useState } from "react"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faLocation } from "@fortawesome/free-brands-svg-icons";
 import Image from "next/image";
@@ -6,6 +7,8 @@ import Link from "next/link";
 import toursData from '../ToursData.json';
 
 export default function Index() {
+
+    const [selectTour, setSelectTour] = useState(null);
   return (
     <>
 
@@ -27,6 +30,31 @@ export default function Index() {
                 </a>
             </button>
         </div>
+    </div>
+
+    {/* Tours */}
+
+    <div className="travel px-[2%] sm:px-[8%] lg:[12%] py-[80px] lg:py-[120px] flex flex-col gap-10 lg:gap-14">
+            <div className="travel-content text-center">
+                <h1 className="unbounded-font text-4xl font-semibold pb-3"> Find Out The Best Travel Choice In Nigeria </h1>
+                <p className="w-[60%] mx-auto text-[#193555]"> Explore our curated selection of travel packages designed to make your journey unforgettable. </p>
+            </div>
+
+            <div className="travel-wrapper grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 xl:grid-cols-4 gap-6">
+                {toursData.map((tour) =>(
+                    <Link href={`/TourDetails/${tour.id}`} key={tour.id}>
+                        <div className="travel-item rounded-xl overflow-hidden relative group transition-all duration-300">
+                            <Image 
+                              src={tour.Images}
+                              width={400}
+                              height={300}
+                              alt={tour.title}
+                              className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+                            />
+                        </div>
+                    </Link>
+                ))}
+            </div>
     </div>
     
     </>
