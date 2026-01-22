@@ -3,11 +3,13 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faLocation } from "@fortawesome/free-brands-svg-icons";
 import Image from "next/image";
 import Link from "next/link";
-
+import toursData from '../ToursData.json';
 
 export default function Index() {
   return (
     <>
+
+    {/* Hero */}
     <div className="hero h-screen min-h-screen flex justify-center items-center z-10">
         <div className="hero-content relative text-center ">
             <h1 className="xl:text-8xl lg:text-7xl md:text-6xl text-4xl unbounded-font font-bold text-white">
