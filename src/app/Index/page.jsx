@@ -15,7 +15,7 @@ export default function Index() {
             </h1>
 
             <p className="pt-3 text-[#ffffffb3] md:pb-10 pb-5">
-                Planning a trip? We will organize toyur trip with the best places to visit.
+                Planning a trip? We will organize your trip with the best places to visit.
             </p>
 
             <button className="btn bg-white group text-[#193555] hover:bg-[#193555] font-bold px-6 w-auto py-4 rounded-full 

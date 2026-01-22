@@ -40,7 +40,7 @@ export default function Nav() {
 
                       <li className="text-sm">
                         <FontAwesomeIcon icon={faEnvelope} className="pr-1 text-[#8192a0] "/>
-                        <span>Bookiings@midetravels.com</span>
+                        <span>Bookings@openskytravel.com</span>
                     </li>
                 </ul>
 
@@ -75,7 +75,7 @@ export default function Nav() {
                 {/* Logo For Mobile */}
 
                 <div className="lg:hidden flex logo text-2xl uppercase font-semibold">
-                    <a href="#" className="unbounded-font">Mide <span className="unbounded-font">travels</span></a>
+                    <a href="#" className="unbounded-font">OpenSky <span className="unbounded-font">Travels</span></a>
                 </div>
 
                 {/* Desktop Menu */}
@@ -84,7 +84,7 @@ export default function Nav() {
                     <li> <Link href="/About" className="active font-[500] text-[#697e8a] hover:text-black transition-colors duration-500">About</Link> </li>
                     <li> <Link href="/Tour" className="active font-[500] text-[#697e8a] hover:text-black transition-colors duration-500">Tour</Link> </li>
                     <div className="logo text-3xl uppercase font-semibold">
-                        <Link href="/" className="unbounded-font">Mide <span className="unbounded-font">travels</span></Link> 
+                        <Link href="/" className="unbounded-font">OpenSky <span className="unbounded-font">Travels</span></Link> 
                     </div>
                     <li> <Link href="/Faq" className="active font-[500] text-[#697e8a] hover:text-black transition-colors duration-500">Faq</Link> </li>
                     <li> <Link href="/Blog" className="active font-[500] text-[#697e8a] hover:text-black transition-colors duration-500">Blog</Link> </li>
