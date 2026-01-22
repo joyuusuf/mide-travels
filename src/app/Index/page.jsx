@@ -1,7 +1,7 @@
 "use client"
 import { useState } from "react"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faLocation } from "@fortawesome/free-brands-svg-icons";
+import { faLocation } from "@fortawesome/free-solid-svg-icons";
 import Image from "next/image";
 import Link from "next/link";
 import toursData from '../ToursData.json';
@@ -51,6 +51,26 @@ export default function Index() {
                               alt={tour.title}
                               className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
                             />
+
+                            <div className="travel-content absolute bottom-0 left-0 flex justify-between items-center w-full p-3 z-10 text-white bg-gradient-to-t from-black/70 to-transparent">
+                                <div>
+                                    <h2 className="text-xl font-semibold unbounded-font pb-1"> 
+                                        {tour.title}
+                                    </h2>
+
+                                    <p className="text-[#ffffff91] text-xs flex items-center gap-1 ">
+                                        <FontAwesomeIcon icon={faLocation} /> 
+                                        {tour.location}
+                                    </p>  
+                                </div>
+                                <h4 className="text-xl font-semibold unbounded-font text-right ">
+                                    <span className="text-[#ffffff91] text-xs font-normal">
+                                        Start From
+                                    </span> {" "}
+                                    <br />
+                                    {tour.price}
+                                </h4>
+                            </div>
                         </div>
                     </Link>
                 ))}
