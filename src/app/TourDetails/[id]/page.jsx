@@ -4,13 +4,16 @@ import { faAngleRight, faClose, faLocationDot, faUser, fausers } from "@fortawes
 import Image from "next/image";
 import toursData from '../../ToursData.json';
 import { notFound } from "next/navigation";
-// import BookingSidebar from './sidebar'
+import BookingSidebar from './sidebar'
 
-export default async function page(params) {
-    const { id } = await params;
+
+export default function Page({ params }) {
+    const { id } = params;
     const tour = toursData.find((t) => t.id.toString() === id);
     // const (!tour) return notFound();
-    if (!tour) return notFound();
+    if (!tour){
+        return notFound();
+    } 
     return (
         <>
             <div className="section-banner px-[2%] sm:px-[8%] lg:px-[12%] py-[50px] lg:py-[90px] min-h-[450px] lg:min-h-[500px] z-20 relative ">
@@ -46,7 +49,7 @@ export default async function page(params) {
                                 <h2 className="text-xl sm:text-3xl font-[500] pb-1 ">
                                     {tour.title} </h2>
                                 <span className="text-[#94a3b8] text-sm">
-                                    <FontAwesomeIcon icon={faLocationDot}/>
+                                    <FontAwesomeIcon icon={faLocationDot} />
                                     {tour.location}
                                 </span>
                             </div>
@@ -58,8 +61,48 @@ export default async function page(params) {
                                 {tour.price}
                             </h4>
                         </div>
+                        <h4 className="text-lg sm:text-xl font-semibold pb-3 pt-4 ">Tour Descriptions:</h4>
+                        <p className="text-[#94a3b8] text-sm pb-2 ">This is a wonderful trip to {tour.title},
+                            located in {tour.location}. Enjoy the culture, food, and breathtaking sights.
+                            Price starts from {" "} {tour.price}.
+                        </p>
+
+                        <p className="text-[#94a3b8] text-sm pb-2">
+                            This tour includes accommodation, guided tours, and meals.
+                            Perfect for solo travelers, couples, and families.
+                            Book now for an unforgettable experience!
+                            Rejoice in the adventure of a lifetime with us.
+                        </p>
+
+                        <h4 className="text-lg sm:text-xl font-semibold pb-4 pt-4">Leave a Comment:</h4>
+
+                        <form className="contact-form w-full ">
+                            <div className="w-full gap-3 flex items-center flex-col lg:flex-row mb-5">
+                                <div className="flex flex-col w-full ">
+                                    <label className="pb-1 text-md font-[500]">Your Name:</label>
+                                    <input type="text" placeholder="Name:" className="border-2 border-gray-100 outline-0 rounded-md" required />
+                                </div>
+
+                                <div className="flex flex-col w-full ">
+                                    <label className="pb-1 text-md font-[500]">Your Email:</label>
+                                    <input type="text" placeholder="Email:" className="border-2 border-gray-100 outline-0 rounded-md" required />
+                                </div>
+
+                                <div className="flex flex-col w-full ">
+                                    <label className="pb-1 text-md font-[500]">Your Comment:</label>
+                                    <textarea type="text" placeholder="Message" className="border-2 border-gray-100 outline-0 rounded-md">
+                                    </textarea>
+                                </div>
+                                <button type="submit" className="btn text-white bg-[#193555] font-bold px-6 w-full py-4 rounded-md cursor-pointer transition-colors duration-300 mt-5">
+                                    <a href="#" className="text-sm xl:text-md uppercase transition-colors duration-300 tracking-wider">
+                                        Send Message
+                                    </a>
+                                </button>
+                            </div>
+                        </form>
                     </div>
                 </div>
+                <BookingSidebar tour={tour} />
             </div>
         </>
     )

@@ -23,7 +23,7 @@ const sora = Sora({
 });
 
 export const metadata = {
-  title: "Mide Travels and Tours Ltd",
+  title: "OpenSky Travels and Tours Ltd",
 };
 
 export default function RootLayout({ children }) {
